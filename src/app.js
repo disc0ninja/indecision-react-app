@@ -46,8 +46,13 @@ class Action extends React.Component {
 
 // Options Component. Renders available options
 class Options extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleRemoveAll = this.handleRemoveAll.bind(this);
+    }
+
     handleRemoveAll() {
-        alert('handleRemoveAll');
+        alert(this.props.options);
     }
 
     render() {
