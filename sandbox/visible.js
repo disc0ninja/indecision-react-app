@@ -1,29 +1,29 @@
-// Set app container div in index.html
-const app = document.getElementById('app');
-
-let visState = 'Show';
-const toggleVis = () => {
-  if (visState === 'Show') {
-    visState = 'Close';
-  } else if (visState === 'Close') {
-    visState = 'Show';
-  } else {
-    console.log('Something went wrong');
+class VisibilityToggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggleVisible = this.toggleVisible.bind(this);
+    this.state = {
+      visible: false
+    }
   }
-  renderApp();
-};
-// render app
-const renderApp = () => {
-  const visible = (
-    <div>
-      <h1>Visibility Toggle</h1>
-      <button onClick={toggleVis} >{`${visState} details`}</button>
-      <p hidden={visState === 'Show'}>Hey, These are some details you can see!</p>
-    </div>
-  );
 
-  ReactDOM.render(visible, app);
+  toggleVisible() {
+    this.setState( (prevState) => {
+      return {
+        visible: !prevState.visible
+      }
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Visibility Toggle</h1>
+        <button onClick={this.toggleVisible}>{this.state.visible ? 'Hide' : 'Show'} details</button>
+        <p hidden={this.state.visible ? false : true} >Hey, These are some details you can see!</p>
+      </div>
+    )
+  }
 }
 
-// start app
-renderApp();
+ReactDOM.render(<VisibilityToggle />, document.getElementById('app'));
