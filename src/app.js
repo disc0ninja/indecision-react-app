@@ -3,7 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //components
-import AddOption from './components/AddOption'
+import AddOption from './components/AddOption';
+import Options from './components/Options';
 
 // Main Application Component (<IndecisionApp />)
 class IndecisionApp extends React.Component {
@@ -119,37 +120,6 @@ const Action = (props) => {
 };
 
 // Options Component. Renders available options
-const Options = (props) => {
-  return (
-      <div>
-          <button onClick={props.handleDeleteOptions}>Remove All</button>
-          {props.options.length === 0 && <p>Add an option to get started</p>}
-          <ul>
-          {
-              props.options.map((option) => (
-                  <Option
-                      key={option}
-                      optionText={option}
-                      handleDeleteOption={props.handleDeleteOption}
-                   />
-              ))
-          }
-          </ul>
-      </div>
-  )
-}
 
-// Option Component
-const Option = (props) => {
-  return (
-      <div>
-          <li>{props.optionText}</li>
-          <button onClick={ (e) => {
-                  props.handleDeleteOption(props.optionText);
-              }}
-          >remove</button>
-      </div>
-  )
-}
 
 ReactDOM.render(<IndecisionApp options={['dinner', 'lunch']} />, document.getElementById('app'));
