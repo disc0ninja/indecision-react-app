@@ -5,7 +5,8 @@ import ReactDOM from 'react-dom';
 //components
 import AddOption from './components/AddOption';
 import Options from './components/Options';
-import Action from './components/Action'
+import Action from './components/Action';
+import Header from './components/Header';
 
 // Main Application Component (<IndecisionApp />)
 class IndecisionApp extends React.Component {
@@ -92,26 +93,5 @@ class IndecisionApp extends React.Component {
       )
   }
 }
-
-
-// Header Component
-const Header = (props) => {
-  return (
-      <div>
-          <h1>{props.title}</h1>
-          {props.subtitle && <h2>{props.subtitle}</h2>}
-      </div>
-  )
-}
-
-Header.defaultProps = {
-  title: 'Indecision'
-}
-
-// Action Component. Chooses a random option from the list
-
-
-// Options Component. Renders available options
-
 
 ReactDOM.render(<IndecisionApp options={['dinner', 'lunch']} />, document.getElementById('app'));

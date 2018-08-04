@@ -1652,6 +1652,10 @@ var _Action = __webpack_require__(100);
 
 var _Action2 = _interopRequireDefault(_Action);
 
+var _Header = __webpack_require__(101);
+
+var _Header2 = _interopRequireDefault(_Header);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1757,7 +1761,7 @@ var IndecisionApp = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(Header, { subtitle: subtitle }),
+                _react2.default.createElement(_Header2.default, { subtitle: subtitle }),
                 _react2.default.createElement(_Action2.default, {
                     hasOptions: this.state.options.length > 0,
                     handlePick: this.handlePick
@@ -1777,36 +1781,7 @@ var IndecisionApp = function (_React$Component) {
     return IndecisionApp;
 }(_react2.default.Component);
 
-// Header Component
-
-
-var Header = function Header(props) {
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'h1',
-            null,
-            props.title
-        ),
-        props.subtitle && _react2.default.createElement(
-            'h2',
-            null,
-            props.subtitle
-        )
-    );
-};
-
-Header.defaultProps = {
-    title: 'Indecision'
-
-    // Action Component. Chooses a random option from the list
-
-
-    // Options Component. Renders available options
-
-
-};_reactDom2.default.render(_react2.default.createElement(IndecisionApp, { options: ['dinner', 'lunch'] }), document.getElementById('app'));
+_reactDom2.default.render(_react2.default.createElement(IndecisionApp, { options: ['dinner', 'lunch'] }), document.getElementById('app'));
 
 /***/ }),
 /* 32 */
@@ -24397,6 +24372,47 @@ var Action = function Action(props) {
 };
 
 exports.default = Action;
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(10);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Header Component
+var Header = function Header(props) {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'h1',
+            null,
+            props.title
+        ),
+        props.subtitle && _react2.default.createElement(
+            'h2',
+            null,
+            props.subtitle
+        )
+    );
+};
+
+Header.defaultProps = {
+    title: 'Indecision'
+};
+
+exports.default = Header;
 
 /***/ })
 /******/ ]);
