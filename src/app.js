@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 //components
 import AddOption from './components/AddOption';
 import Options from './components/Options';
+import Action from './components/Action'
 
 // Main Application Component (<IndecisionApp />)
 class IndecisionApp extends React.Component {
@@ -108,16 +109,7 @@ Header.defaultProps = {
 }
 
 // Action Component. Chooses a random option from the list
-const Action = (props) => {
-  return (
-      <div>
-          <button onClick={props.handlePick}
-              disabled={!props.hasOptions}>
-              Are You Feeling Lucky Punk?
-          </button>
-      </div>
-  );
-};
+
 
 // Options Component. Renders available options
 
