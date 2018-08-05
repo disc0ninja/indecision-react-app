@@ -1,5 +1,11 @@
-$brand-color: #424242;
+@import './base/settings';
+@import './base/base';
 
-* {
-  color: $brand-color;
-}
+// Components
+@import './components/add-option';
+@import './components/button';
+@import './components/container';
+@import './components/header';
+@import './components/option';
+@import './components/selected-option-modal';
+@import './components/widget';
